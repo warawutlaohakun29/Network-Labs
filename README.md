@@ -17,6 +17,3 @@ This lab simulates a robust campus network designed for scalability, redundancy,
 ## 📂 Files in this Repository
 * **Network-Labs.pkt:** The main Cisco Packet Tracer simulation file.
 * **README.md:** Documentation of the project.
-
-## 📸 Network Topology
-*(แนะนำให้น้องบีอัปโหลดรูปภาพ Topology แล้วมาแปะลิงก์ตรงนี้ เพื่อให้คนเห็นภาพรวมทันทีครับ)*
