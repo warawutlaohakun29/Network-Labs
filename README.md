@@ -17,3 +17,24 @@ This lab simulates a robust campus network designed for scalability, redundancy,
 ## 📂 Files in this Repository
 * **Network-Labs.pkt:** The main Cisco Packet Tracer simulation file.
 * **README.md:** Documentation of the project.
+
+## 🧪 Verification & Test Results
+
+To ensure the network was configured correctly according to the security and connectivity requirements, the following tests were performed from the **Guest VLAN (192.168.40.0/24)**:
+
+### 1. Network Security (Access Control List Verification)
+* **Test:** Ping from Guest PC to Internal Server (`192.168.10.100`).
+* **Result:** `Destination host unreachable` (from Gateway `192.168.40.1`).
+* ![e5d8c3cb-974f-461f-801f-3c252100cdf4](https://github.com/user-attachments/assets/66d1faa8-d839-4944-bb41-c2bc0849c921)
+
+* **Conclusion:** The **Extended ACL** is successfully blocking Guest access to the sensitive Server VLAN, effectively isolating the internal network.![Uploading e5d8c3cb-974f-461f-801f-3c252100cdf4.jpg…]()
+### 2. Internet Connectivity (NAT/PAT Verification)
+* **Test:** Ping from Guest PC to Public Internet IP (`200.0.0.2`).
+* **Result:** `Reply from 200.0.0.2: bytes=32 time<1ms TTL=126`.
+* **Conclusion:** **NAT/PAT Overload** and **Default Routing** are working correctly, allowing private internal hosts to access external resources.
+
+### 3. Automatic IP Assignment (DHCP Relay Verification)
+* **Test:** Check IP Configuration on Guest PC.
+* **Result:** Successfully received IP `192.168.40.10` via DHCP.
+* **Conclusion:** The **DHCP Relay (IP Helper-Address)** on the Layer 3 Switch is correctly forwarding requests to the central DHCP Server across VLAN boundaries.
+* ![9a5985de-2a7a-42bd-a678-0f7ab6b27856](https://github.com/user-attachments/assets/723fab13-c93e-4a0d-b0d4-0169c2ee5e41)
