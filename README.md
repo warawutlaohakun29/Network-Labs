@@ -25,9 +25,9 @@ To ensure the network was configured correctly according to the security and con
 ### 1. Network Security (Access Control List Verification)
 * **Test:** Ping from Guest PC to Internal Server (`192.168.10.100`).
 * **Result:** `Destination host unreachable` (from Gateway `192.168.40.1`).
+* **Conclusion:** The **Extended ACL** is successfully blocking Guest access to the sensitive Server VLAN, effectively isolating the internal network.
 * ![e5d8c3cb-974f-461f-801f-3c252100cdf4](https://github.com/user-attachments/assets/66d1faa8-d839-4944-bb41-c2bc0849c921)
 
-* **Conclusion:** The **Extended ACL** is successfully blocking Guest access to the sensitive Server VLAN, effectively isolating the internal network.![Uploading e5d8c3cb-974f-461f-801f-3c252100cdf4.jpg…]()
 ### 2. Internet Connectivity (NAT/PAT Verification)
 * **Test:** Ping from Guest PC to Public Internet IP (`200.0.0.2`).
 * **Result:** `Reply from 200.0.0.2: bytes=32 time<1ms TTL=126`.
